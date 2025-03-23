@@ -61,7 +61,6 @@ const onChange = (id) =>{
         alerta.innerText = "";
     }
     for (let i = 0; i < materias.length; i++){
-        console.log("text" + materias[i]);
         document.getElementById("text" + materias[i]).classList.remove("azul");
     }
 }
@@ -103,9 +102,10 @@ botonNota.addEventListener("click", function(){
         for (let i = 0; i < document.getElementsByClassName("nota").length; i++)
         {
             notas[i] = (parseInt(document.getElementsByClassName("nota")[i].value))
-            console.log("la nota de " + materias[i] + " es " + notas[i]);
             if (notaAlta < notas[i])
-            {notaAlta = notas[i];}
+            {
+                notaAlta = notas[i];
+            }
         }
         console.log(notaAlta);
         for (let i = 0; i < notas.length; i++)
@@ -116,14 +116,11 @@ botonNota.addEventListener("click", function(){
                 materiasNotaAlta+=materias[i];
                 if (i < notas.length-1)
                     mensajeNota+= ", ";
-                console.log("text" + materias[i]);
                 document.getElementById("text" + materias[i]).classList.add("azul");
             }
         }
         if (mensajeNota[mensajeNota.length-1] == " ")
         {
-            console.log("entró");
-            console.log(mensajeNota[mensajeNota.length-2]);
             mensajeNota = borrarLetra(mensajeNota, mensajeNota.length-2, "");
         }
         mayorNotaTag.innerHTML = mensajeNota;
