@@ -19,11 +19,6 @@ let materiasNotaAlta = [];
 let materias = ["Matematica", "Lengua", "EFSI"];
 const cambiarGif = (nota = null) =>{
     const gif = document.getElementById('gif');
-    console.log(nota);
-    if (nota == -1) 
-    {
-        gif.src= "";
-    }
     if (nota != null)
     {
         if (nota < 6)
@@ -68,8 +63,7 @@ const onChange = (id) =>{
     for (let i = 0; i < materias.length; i++){
         console.log("text" + materias[i]);
         document.getElementById("text" + materias[i]).classList.remove("azul");
-    }   
-    cambiarGif(-1);
+    }
 }
 
 
